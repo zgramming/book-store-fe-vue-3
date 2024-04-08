@@ -52,7 +52,7 @@ The environment variables can be found and modified in the `.env` file.
 
 ```bash
 # API Url
-NEXT_PUBLIC_BASE_URL=http://localhost:4000/api/v1
+VITE_API_URL = http://localhost:4000/api/v1
 ```
 
 ### Pages
