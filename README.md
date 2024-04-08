@@ -1,9 +1,75 @@
-# Vue 3 + TypeScript + Vite
+# Frontend for Library Apps
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+The project builds using Vue 3, Vuetify, Vue Router, Vite, Tailwind CSS
 
-## Recommended Setup
+## Manual Installation
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+```bash
+git clone https://github.com/zgramming/book-store-fe-vue-3.git
+cd book-store-fe-nextjs
+```
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Set the environment variables:
+
+```bash
+cp .env.example .env
+# open .env and modify the environment variables
+```
+
+
+## Table of Contents
+
+- [Commands](#commands)
+- [Environment Variables](#environment-variables)
+- [Pages](#pages)
+
+## Commands
+
+Running in development:
+
+```bash
+npm run dev
+```
+
+Running in production:
+
+```bash
+# build
+npm run build
+# start
+npm run preview
+```
+
+## Environment Variables
+
+The environment variables can be found and modified in the `.env` file.
+
+```bash
+# API Url
+NEXT_PUBLIC_BASE_URL=http://localhost:4000/api/v1
+```
+
+### Pages
+List of available pages:
+
+**Master Book**\
+![alt text](screenshots/1.master-book.png)
+
+**Master Student**\
+![alt text](screenshots/2.master-student.png)
+
+**Inventory**\
+![alt text](screenshots/3.inventory.png)
+
+**Transaction**\
+![alt text](screenshots/4.transaction.png)
+
+**History Transaction**
+![alt text](screenshots/5.history.png)
+
