@@ -1,44 +1,4 @@
 <script setup lang="ts">
-interface History {
-  id: number;
-  transaction_id: number;
-  book_id: number;
-  student_id: number;
-  qty: number;
-  status: string;
-  duration_loan_days: number;
-  created_at: Date;
-  updated_at: Date;
-  student: Student;
-  book: Book;
-  transaction: Transaction;
-}
-
-interface Book {
-  id: number;
-  title: string;
-  author: string;
-  publisher: string;
-  year: number;
-  created_at: Date;
-  updated_at: Date;
-}
-
-interface Student {
-  id: number;
-  name: string;
-  nim: string;
-  status: string;
-}
-
-interface Transaction {
-  id: number;
-  student_id: number;
-  date_loan: Date;
-  date_return: Date;
-  status: string;
-}
-
 import { ref, watch } from 'vue';
 import BaseLayout from '../components/layouts/BaseLayout.vue';
 import useSWRV from 'swrv';
@@ -90,42 +50,6 @@ const handlingDateReturn = (value: string) => {
 const handlingLoanDuration = (value: string) => {
   loanDuration.value = value;
 };
-
-const desserts = ref<Array<History>>([
-  {
-    id: 1,
-    student_id: 1,
-    transaction_id: 1,
-    book_id: 1,
-    duration_loan_days: 7,
-    qty: 1,
-    status: 'returned',
-    created_at: new Date(),
-    updated_at: new Date(),
-    book: {
-      id: 1,
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      publisher: 'George Allen & Unwin',
-      year: 1937,
-      created_at: new Date(),
-      updated_at: new Date(),
-    },
-    student: {
-      id: 1,
-      name: 'John Doe',
-      nim: 'A12345678',
-      status: 'Active',
-    },
-    transaction: {
-      id: 1,
-      student_id: 1,
-      date_loan: new Date(),
-      date_return: new Date(),
-      status: 'loaned',
-    },
-  },
-]);
 
 watch([limit, page, bookName, studentName, studentNIM, dateLoan, dateReturn, loanDuration], () => {
   reloadHistories();

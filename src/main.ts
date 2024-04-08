@@ -2,9 +2,6 @@ import { createApp } from 'vue';
 import './style.css';
 import App from './App.vue';
 
-// Data fetching library
-import { VueQueryPlugin } from '@tanstack/vue-query';
-
 // Vuetify
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
@@ -32,4 +29,4 @@ const vuetify = createVuetify({
   },
 });
 
-createApp(App).use(router).use(vuetify).use(VueQueryPlugin).mount('#app');
+createApp(App).use(router).use(vuetify).mount('#app');
